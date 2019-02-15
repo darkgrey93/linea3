@@ -14,8 +14,8 @@ package Pojos;
 public class Letras {
    char[] letras={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'};
     
-   public int devolverposicion(char letra){
-       byte numPosicion=0;
+   public Short devolverPosicion(char letra){
+       Short numPosicion=0;
        boolean respuesta=false; 
        while(respuesta==false){
            if(letra==letras[numPosicion]){
@@ -23,9 +23,20 @@ public class Letras {
            }
            numPosicion++;
        }
-       return numPosicion-1;
+       return numPosicion--;
    }
-    
+   
+   /** 
+    * 
+    * El metodo devuelve la letra que esta en la posicion indicada
+    * 
+    * @author darkgranadier
+    */
+   public char devolverLetra(Short posicion){
+       char letra; 
+       letra=letras[posicion];
+       return letra;
+   }
     
     
 }

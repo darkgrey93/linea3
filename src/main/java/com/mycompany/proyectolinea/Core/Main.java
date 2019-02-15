@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.proyectolinea.Core;
+import Logica.Core;
 import Pojos.*;
 /**
  *
@@ -16,10 +17,13 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Letras letras=new Letras(); 
-        int num=letras.devolverposicion('z');
+        /*Letras letras=new Letras(); 
+        int num=letras.devolverPosicion('z');
         System.out.println(num);
-        System.out.println("ese es el numero");
+        System.out.println("ese es el numero");*/
+        
+        Core ej=new Core();
+        ej.decodificar();
     }
     
 }
