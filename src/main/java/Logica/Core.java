@@ -29,6 +29,6 @@ public class Core {
         System.out.println("Digite la clave");
         entradaTeclado= entradaEscaner.nextLine();
         clave=Short.parseShort(entradaTeclado);
-        return;
+        return entradaTeclado;
     }
 }
