@@ -12,6 +12,23 @@ import java.util.Scanner; //Esta clase se encarga de recivir datos por consola
 public class Core {
     Scanner entradaEscaner = new Scanner (System.in);
     String entradaTeclado = "";
-    entradaTeclado = entradaEscaner.nextLine();
+    String palabra;
+    Short clave;
+    //entradaTeclado= entradaEscaner.nextLine();
     
+    /** 
+     * 
+     * Metodo que sirve para decodificar la palabra
+     * @author darkgranadier
+     * 
+     */
+    public String decodificar(String palabra, Short clave){
+        System.out.println("Digite la palabra a decodificar");
+        entradaTeclado= entradaEscaner.nextLine();
+        palabra=entradaTeclado;
+        System.out.println("Digite la clave");
+        entradaTeclado= entradaEscaner.nextLine();
+        clave=Short.parseShort(entradaTeclado);
+        return;
+    }
 }
