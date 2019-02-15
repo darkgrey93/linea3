@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Letras letras=new Letras(); 
-        int num=letras.devolverposicion('b');
+        int num=letras.devolverposicion('z');
         System.out.println(num);
         System.out.println("ese es el numero");
     }
