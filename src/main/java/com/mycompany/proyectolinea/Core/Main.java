@@ -23,7 +23,7 @@ public class Main {
         System.out.println("ese es el numero");*/
         
         Core ej=new Core();
-        ej.decodificar();
+        ej.menu();
     }
     
 }
