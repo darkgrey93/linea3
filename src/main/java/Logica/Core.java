@@ -51,15 +51,6 @@ public class Core {
      */
     public void decodificar(/*String palabra, Short clave*/){
         Letras letras=new Letras();
-        /*boolean bandera=false;
-        while(true){
-            System.out.println("Digite la palabra a decodificar");
-            entradaTeclado=entradaEscaner.nextLine();
-            if(entradaTeclado!=""){
-                break;
-            }
-            
-        }*/
         System.out.println("Digite la palabra a decodificar");
         entradaTeclado=entradaEscaner.nextLine();
         palabra=entradaTeclado;
