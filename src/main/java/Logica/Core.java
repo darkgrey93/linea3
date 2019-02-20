@@ -61,23 +61,18 @@ public class Core {
             //System.out.println("iteracion");
             char l=palabra.charAt(i);           
             indice=letras.devolverPosicion(l);
-            indice=(short) (indice-this.clave);
-            if(indice<-26){
-                indice=(short)(indice/26);
-                indice=(short)(26+indice);
-                    
-            }
-            if(indice<0){
-                
-                indice=(short)(26+indice);
-            }
+            indice=(short) ((indice-this.clave)%26);
+            if(indice<0){                
+                indice=(short)((letras.letras.length)-indice);
+            }            
             System.out.print(letras.devolverLetra(indice));            
             
         }
         //return entradaTeclado;
     }
     public void codificar(/*String palabra, Short clave*/){
-        Letras letras=new Letras();
+        Letras letras=new Letras();        entradaTeclado= entradaEscaner.nextLine();
+
         System.out.println("Digite la palabra a decodificar");
         entradaTeclado= entradaEscaner.nextLine();
         palabra=entradaTeclado;
