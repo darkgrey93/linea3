@@ -5,12 +5,16 @@
  */
 package Logica;
 import Pojos.Letras;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner; //Esta clase se encarga de recivir datos por consola
 /**
- *
+ * 
  * @author Darkgrey93
  */
 public class Core {
+    public static BufferedReader entrada=new BufferedReader(new InputStreamReader(System.in));
     Scanner entradaEscaner = new Scanner (System.in);
     String palabra;
     short clave;
@@ -18,13 +22,13 @@ public class Core {
     String entradaTeclado="";
     //Short i=0;
     //entradaTeclado= entradaEscaner.nextLine();
-    public void menu(){
+    public void menu() throws IOException{
         int opcion;
         System.out.println("digite lo que desea hacer... recuerde que debe ser un digito:\n"
                 + "1. para codificar palabra\n"
                 + "2. para decodificar palabra \n"
                 + "3. para salir");
-        opcion = entradaEscaner.nextInt();
+        opcion = Integer.parseInt((entrada.readLine()));
         switch(opcion){
             case 1:
                 codificar();
