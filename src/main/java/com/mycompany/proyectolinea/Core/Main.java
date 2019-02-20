@@ -6,6 +6,7 @@
 package com.mycompany.proyectolinea.Core;
 import Logica.Core;
 import Pojos.*;
+import java.io.IOException;
 /**
  *
  * @author Darkgrey93
@@ -15,15 +16,9 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        /*Letras letras=new Letras(); 
-        int num=letras.devolverPosicion('z');
-        System.out.println(num);
-        System.out.println("ese es el numero");*/
-        
-        Core ej=new Core();
-        ej.menu();
+    public static void main(String[] args) throws IOException {        
+        Core logica=new Core();
+        logica.menu();
     }
     
 }
