@@ -32,7 +32,7 @@ public class Letras {
     * 
     * @author darkgranadier
     */
-   public char devolverLetra(Short posicion){
+   public char devolverLetra(int posicion){
        char letra; 
        letra=letras[posicion];
        return letra;

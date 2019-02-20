@@ -47,7 +47,7 @@ public class Core {
      */
     public void decodificar(/*String palabra, Short clave*/){
         Letras letras=new Letras();
-        boolean bandera=false;
+        /*boolean bandera=false;
         while(true){
             System.out.println("Digite la palabra a decodificar");
             entradaTeclado=entradaEscaner.nextLine();
@@ -55,7 +55,9 @@ public class Core {
                 break;
             }
             
-        }
+        }*/
+        System.out.println("Digite la palabra a decodificar");
+        entradaTeclado=entradaEscaner.nextLine();
         palabra=entradaTeclado;
         System.out.println("Digite la clave");
         entradaTeclado= entradaEscaner.nextLine();
@@ -64,11 +66,12 @@ public class Core {
             //System.out.println("iteracion");
             char l=palabra.charAt(i);           
             indice=letras.devolverPosicion(l);
-            indice=(short) ((indice-this.clave)%26);
-            if(indice<0){                
-                indice=(short)((letras.letras.length)-indice);
+            int key=indice-clave%26;
+            if(key!=-1){                
+                key=letras.letras.length+key;
+                
             }            
-            System.out.print(letras.devolverLetra(indice));            
+            System.out.print(letras.devolverLetra(key));            
             
         }
         //return entradaTeclado;
@@ -76,7 +79,7 @@ public class Core {
     public void codificar(/*String palabra, Short clave*/){
         Letras letras=new Letras();        entradaTeclado= entradaEscaner.nextLine();
 
-        System.out.println("Digite la palabra a decodificar");
+        System.out.println("Digite la palabra a codificar");
         entradaTeclado= entradaEscaner.nextLine();
         palabra=entradaTeclado;
         System.out.println("Digite la clave");
