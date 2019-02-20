@@ -23,25 +23,33 @@ public class Core {
     //Short i=0;
     //entradaTeclado= entradaEscaner.nextLine();
     public void menu() throws IOException{
+        int rta=1;
         int opcion;
-        System.out.println("digite lo que desea hacer... recuerde que debe ser un digito:\n"
+        while(rta!=2){
+            System.out.println("digite lo que desea hacer... recuerde que debe ser un digito:\n"
                 + "1. para codificar palabra\n"
                 + "2. para decodificar palabra \n"
                 + "3. para salir");
-        opcion = Integer.parseInt((entrada.readLine()));
-        switch(opcion){
-            case 1:
-                codificar();
-                break;
-            case 2:
-                decodificar();
-                break;
-            case 3:
-                System.out.println("terminando programa...");
-                System.exit(0);
-                break;
+            opcion = Integer.parseInt((entrada.readLine()));
+            switch(opcion){
+                case 1:
+                    codificar();
+                    System.out.println("Desea continuar? 1 si, 2 no");
+                    rta = Integer.parseInt((entrada.readLine()));
+                    break;
+                case 2:
+                    decodificar();
+                    System.out.println("Desea continuar? 1 si, 2 no");
+                    rta = Integer.parseInt((entrada.readLine()));
+                    break;
+                case 3:
+                    System.out.println("terminando programa...");
+                    System.exit(0);
+                    break;
     
+            }
         }
+        System.exit(0);
     }
     /** 
      * 
@@ -61,21 +69,19 @@ public class Core {
             //System.out.println("iteracion");
             char l=palabra.charAt(i);           
             indice=letras.devolverPosicion(l);
-            int key=indice-clave%26;
-            if(key!=-1){                
-                key=letras.letras.length+key;
-                
+            int key=(indice-clave)%26;
+            if(key<0){                
+                key=letras.letras.length+key;               
             }            
             System.out.print(letras.devolverLetra(key));            
-            
         }
+        System.out.println("");
         //return entradaTeclado;
     }
     public void codificar(/*String palabra, Short clave*/){
-        Letras letras=new Letras();        entradaTeclado= entradaEscaner.nextLine();
-
+        Letras letras=new Letras();
         System.out.println("Digite la palabra a codificar");
-        entradaTeclado= entradaEscaner.nextLine();
+        entradaTeclado=entradaEscaner.nextLine();
         palabra=entradaTeclado;
         System.out.println("Digite la clave");
         entradaTeclado= entradaEscaner.nextLine();
@@ -84,19 +90,13 @@ public class Core {
             //System.out.println("iteracion");
             char l=palabra.charAt(i);           
             indice=letras.devolverPosicion(l);
-            indice=(short) (indice+this.clave);
-            if(indice<-26){
-                indice=(short)(indice/26);
-                indice=(short)(26+indice);
-                    
-            }
-            if(indice<0){
-                
-                indice=(short)(26+indice);
-            }
-            System.out.print(letras.devolverLetra(indice));            
-            
+            int key=(indice+clave)%26;
+            if(key>26){                
+                key=letras.letras.length-key;               
+            }            
+            System.out.print(letras.devolverLetra(key));            
         }
+        System.out.println("");
         //return entradaTeclado;
     }
 }

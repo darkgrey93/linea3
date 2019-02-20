@@ -12,7 +12,7 @@ package Pojos;
  * @author Darkgrey93
  */
 public class Letras {
-   public char[] letras={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'};
+   public char[] letras={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     
    public Short devolverPosicion(char letra){
        Short numPosicion=0;
@@ -23,7 +23,8 @@ public class Letras {
            }
            numPosicion++;
        }
-       return numPosicion--;
+       numPosicion--;
+       return numPosicion;
    }
    
    /** 
